@@ -21,6 +21,12 @@ let students = {
     ]
 }
 
+app.use(express.json());
+
+app.post('/todos', (req, res) => {
+    console.log({message: "received", body: req.body});
+    res.json({message: "received", body: req.body});
+})
 
 // get is the METHOD, /foo is the ENDPOINT, req and res are the PARAMETERS. Whole thing is a call back function
 app.get('/foo', (req, res) => {
